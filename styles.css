@@ -1,0 +1,215 @@
+/*
+ * Establece estilos globales para todos los elementos:
+ * - Elimina márgenes y rellenos predeterminados.
+ * - Configura el modelo de caja para incluir bordes y rellenos en el tamaño total.
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+ * Aplica estilos al cuerpo de la página:
+ * - Fuente predeterminada.
+ * - Fondo con un gradiente lineal.
+ * - Altura mínima para ocupar toda la ventana.
+ * - Centra el contenido horizontal y verticalmente.
+ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+ * Contenedor principal de la calculadora:
+ * - Añade relleno alrededor del contenido.
+ */
+.calculadora-container {
+    padding: 20px;
+}
+
+/*
+ * Estilos para la calculadora:
+ * - Fondo oscuro con bordes redondeados.
+ * - Sombra para dar efecto de profundidad.
+ * - Ancho fijo.
+ */
+.calculadora {
+    background-color: #2c3e50;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 320px;
+}
+
+/*
+ * Margen inferior para separar la pantalla de los botones.
+ */
+.display {
+    margin-bottom: 20px;
+}
+
+/*
+ * Estilos para la pantalla de la calculadora:
+ * - Ancho completo y relleno interno.
+ * - Texto alineado a la derecha.
+ * - Fondo oscuro con texto en color azul.
+ * - Bordes redondeados.
+ */
+#pantalla {
+    width: 100%;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: right;
+    background-color: #1a1a1a;
+    color: #3498db;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/*
+ * Contenedor de los botones:
+ * - Diseño de cuadrícula con 4 columnas.
+ * - Espaciado uniforme entre los botones.
+ */
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/*
+ * Estilos generales para los botones:
+ * - Relleno interno y texto grande.
+ * - Bordes redondeados y sin borde visible.
+ * - Fondo gris oscuro con texto blanco.
+ * - Transiciones suaves para efectos de interacción.
+ */
+.btn {
+    padding: 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #34495e;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+/*
+ * Efecto hover para los botones:
+ * - Cambia el color de fondo.
+ * - Aplica una ligera elevación con sombra.
+ */
+.btn:hover {
+    background-color: #455a64;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/*
+ * Efecto al presionar un botón:
+ * - Elimina la elevación.
+ */
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*
+ * Estilos específicos para los botones de operadores:
+ * - Fondo azul con texto blanco.
+ */
+.btn-operador {
+    background-color: #3498db;
+    color: white;
+}
+
+/*
+ * Efecto hover para los botones de operadores:
+ * - Cambia el color de fondo a un azul más oscuro.
+ */
+.btn-operador:hover {
+    background-color: #2980b9;
+}
+
+/*
+ * Estilos específicos para el botón de igual:
+ * - Fondo verde.
+ * - Ocupa una fila completa en la cuadrícula.
+ */
+.btn-igual {
+    background-color: #27ae60;
+    grid-column: span 1;
+}
+
+/*
+ * Efecto hover para el botón de igual:
+ * - Cambia el color de fondo a un verde más oscuro.
+ */
+.btn-igual:hover {
+    background-color: #229954;
+}
+
+/*
+ * Estilos específicos para el botón de limpiar:
+ * - Fondo rojo.
+ */
+.btn-limpiar {
+    background-color: #e74c3c;
+    grid-column: span 1;
+}
+
+/*
+ * Efecto hover para el botón de limpiar:
+ * - Cambia el color de fondo a un rojo más oscuro.
+ */
+.btn-limpiar:hover {
+    background-color: #c0392b;
+}
+
+/*
+ * Estilos específicos para el botón de borrar:
+ * - Fondo naranja.
+ */
+.btn-borrar {
+    background-color: #f39c12;
+}
+
+/*
+ * Efecto hover para el botón de borrar:
+ * - Cambia el color de fondo a un naranja más oscuro.
+ */
+.btn-borrar:hover {
+    background-color: #e67e22;
+}
+
+/*
+ * Estilos responsivos para pantallas pequeñas (ancho máximo de 480px):
+ * - Ajusta el ancho de la calculadora.
+ * - Reduce el tamaño de la fuente y el relleno de los botones y la pantalla.
+ */
+@media (max-width: 480px) {
+    .calculadora {
+        width: 280px;
+        padding: 15px;
+    }
+
+    #pantalla {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+}
